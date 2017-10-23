@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emojiTextField: UITextField!
     @IBOutlet weak var descripcionTextField: UITextField!
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojiTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,7 +33,6 @@ class ViewController: UIViewController {
         if emojiTextField.text != "" && descripcionTextField.text != "" {
             if var arrEmojis = UserDefaults.standard.object(forKey: "emojis") as? [[String]]{
                 let nuevoEmoji = [emojiTextField.text!, descripcionTextField.text!]
-                print(emojiTextField.text!)
                 arrEmojis.append(nuevoEmoji)
                 UserDefaults.standard.set(arrEmojis, forKey: "emojis")
             }else {
@@ -41,12 +41,17 @@ class ViewController: UIViewController {
             }
             print("se guardo correctamente")
             //guardar el arreglo en memoria
-            
-            
             //Si no existe el arreglo en memoria
             //creamos un arreglo nuevo
             //Guardamos en memoria
+        }else  {
+            let alertController = UIAlertController(title: "Faltaron datos", message: "Ingresa todos los campos", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
         }
+        
+        
     }
     
     @IBAction func Obtener(_ sender: UIButton) {
@@ -61,17 +66,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func anterior(_ sender: UIButton) {
-        
+        if indice > 0 {
+            indice -= 1
+            emojiLabel.text = nuestrosEmojis[indice][0]
+            descripionLabel.text = nuestrosEmojis[indice][1]
+        }
     }
     
     @IBAction func siguiente(_ sender: UIButton) {
-        indice += 1
-        emojiLabel.text = nuestrosEmojis[indice][0]
-        descripionLabel.text = nuestrosEmojis[indice][1]
+        if indice < nuestrosEmojis.count - 1 {
+            indice += 1
+            emojiLabel.text = nuestrosEmojis[indice][0]
+            descripionLabel.text = nuestrosEmojis[indice][1]
+        }
     }
     
     @IBAction func borrar(_ sender: UIButton) {
         UserDefaults.standard.removeObject(forKey: "emojis")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emojiTextField.resignFirstResponder()
+        return true
     }
     
     
