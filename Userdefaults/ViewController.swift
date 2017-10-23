@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         emojiTextField.delegate = self
+        //emojiLabel.alpha = 0.0
+        //descripionLabel.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -47,7 +49,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }else  {
             let alertController = UIAlertController(title: "Faltaron datos", message: "Ingresa todos los campos", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .destructive, handler: nil)
             alertController.addAction(alertAction)
+            alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
         }
         
