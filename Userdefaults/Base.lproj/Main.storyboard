@@ -29,7 +29,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMC-Kp-5a4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cornerRadius number 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMC-Kp-5a4">
                                 <rect key="frame" x="30" y="323" width="260" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="178" id="VgD-S5-vNn"/>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cja-uV-QgV">
-                                <rect key="frame" x="30" y="363.5" width="259" height="30"/>
+                                <rect key="frame" x="30" y="363" width="259" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnk-I7-IOy">
                                         <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
@@ -57,6 +57,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="anterior:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jcw-H3-U0l"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQB-iw-eOD">
                                         <rect key="frame" x="93" y="0.0" width="73" height="30"/>
@@ -74,6 +77,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="borrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W82-No-id9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7K-5J-NQd">
                                         <rect key="frame" x="186" y="0.0" width="73" height="30"/>
@@ -91,6 +97,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="siguiente:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Axp-1m-FhR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -113,6 +122,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="guardar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kcy-rs-EMF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGc-dL-67a">
                                         <rect key="frame" x="123" y="0.0" width="73" height="30"/>
@@ -130,6 +142,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="Obtener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqR-NE-lVX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -162,6 +177,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="descripcionTextField" destination="5nB-hT-auQ" id="JUh-Hl-AyX"/>
+                        <outlet property="descripionLabel" destination="tMC-Kp-5a4" id="rPg-iG-FVz"/>
+                        <outlet property="emojiLabel" destination="enR-hZ-nnf" id="3uz-aN-NjW"/>
+                        <outlet property="emojiTextField" destination="ggA-F6-mkO" id="FTB-vc-7bd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
