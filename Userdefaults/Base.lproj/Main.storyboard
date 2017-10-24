@@ -123,7 +123,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="guardar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kcy-rs-EMF"/>
+                                            <action selector="guardarEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kcy-rs-EMF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGc-dL-67a">
@@ -143,7 +143,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="Obtener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqR-NE-lVX"/>
+                                            <action selector="obtenerEmojis:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqR-NE-lVX"/>
                                         </connections>
                                     </button>
                                 </subviews>
